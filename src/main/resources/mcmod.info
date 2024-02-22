@@ -1,0 +1,14 @@
+[
+    {
+        "modid": "oedldoedlintegration",
+        "name": "Oedldoedl Integration",
+        "description": "A content module for the oedldoedl series that adds various mod integrations. Originally intended to be used with mods like CraftTweaker to add recipes, but the mod does add its own recipes. Recipes can be disabled and some items easily configured via a config file.",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "https://github.com/thep2wking/oedldoedl-integration",
+        "authorList": ["TheP2WKing"],
+        "credits": "TheP2WKing",
+        "logoFile": "assets/oedldoedlintegration/textures/gui/logo/integration_logo.png",
+        "dependencies": []
+    }
+]
