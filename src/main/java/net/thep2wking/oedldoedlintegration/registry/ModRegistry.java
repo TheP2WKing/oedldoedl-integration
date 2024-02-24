@@ -24,6 +24,9 @@ public class ModRegistry {
 	public static void onBlockRegister(RegistryEvent.Register<Block> event) {
 		ModLogger.registeredBlocksLogger(OedldoedlIntegration.MODID);
 
+		ModRegistryHelper.registerBlock(event, ModBlocks.URANIUM_ORE);
+		ModRegistryHelper.registerBlock(event, ModBlocks.TITANIUM_ORE);
+
 		ModRegistryHelper.registerBlock(event, ModBlocks.URANIUM);
 		ModRegistryHelper.registerBlock(event, ModBlocks.TITANIUM);
 	}
@@ -31,6 +34,9 @@ public class ModRegistry {
 	@SubscribeEvent
 	public static void onItemRegister(RegistryEvent.Register<Item> event) {
 		ModLogger.registeredItemsLogger(OedldoedlIntegration.MODID);
+
+		ModRegistryHelper.registerItemBlock(event, ModItems.URANIUM_ORE);
+		ModRegistryHelper.registerItemBlock(event, ModItems.TITANIUM_ORE);
 
 		ModRegistryHelper.registerItemBlock(event, ModItems.URANIUM_BLOCK);
 		ModRegistryHelper.registerItemBlock(event, ModItems.TITANIUM_BLOCK);

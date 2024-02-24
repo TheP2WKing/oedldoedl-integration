@@ -11,9 +11,9 @@ public class Properties {
 
 	public static class Colors {
 		@Config.Name("Uranium")
-		public int URANIUM = 0x2d9c0c;
+		public String URANIUM = "#2d9c0c";
 
 		@Config.Name("Titanium")
-		public int TITANIUM = 0xc3c5db;
+		public String TITANIUM = "#c3c5db";
 	}
 }

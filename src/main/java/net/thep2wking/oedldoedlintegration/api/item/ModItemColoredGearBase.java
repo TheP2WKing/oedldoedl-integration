@@ -11,8 +11,8 @@ import net.thep2wking.oedldoedlintegration.OedldoedlIntegration;
 public class ModItemColoredGearBase extends ModItemColoredResourceBase {
 	public static final String GENERIC_NAME = "item." + OedldoedlIntegration.MODID + ".gear_colorable";
 
-	public ModItemColoredGearBase(String modid, String name, CreativeTabs tab, int color) {
-		super(modid, name + "_gear", tab, color, ModRarities.WHITE, false, 0, 0);
+	public ModItemColoredGearBase(String modid, String name, CreativeTabs tab, String hexColor) {
+		super(modid, name + "_gear", tab, hexColor, ModRarities.WHITE, false, 0, 0);
 	}
 
 	public String getNameWithOutType() {

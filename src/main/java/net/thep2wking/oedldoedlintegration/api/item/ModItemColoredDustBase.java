@@ -13,8 +13,8 @@ public class ModItemColoredDustBase extends ModItemColoredResourceBase {
 	public static final String GENERIC_NAME = "item." + OedldoedlIntegration.MODID + ".dust_colorable";
 	public static final String THERMAL_NAME = "item." + OedldoedlIntegration.MODID + ".pulverized_colorable";
 
-	public ModItemColoredDustBase(String modid, String name, CreativeTabs tab, int color) {
-		super(modid, name + "_dust", tab, color, ModRarities.WHITE, false, 0, 0);
+	public ModItemColoredDustBase(String modid, String name, CreativeTabs tab, String hexColor) {
+		super(modid, name + "_dust", tab, hexColor, ModRarities.WHITE, false, 0, 0);
 	}
 
 	public String getNameWithOutType() {

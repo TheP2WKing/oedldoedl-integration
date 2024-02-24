@@ -2,6 +2,7 @@ package net.thep2wking.oedldoedlintegration.init;
 
 import net.minecraft.item.Item;
 import net.thep2wking.oedldoedlintegration.OedldoedlIntegration;
+import net.thep2wking.oedldoedlintegration.api.item.ModItemBlockColoredOreBase;
 import net.thep2wking.oedldoedlintegration.api.item.ModItemBlockColoredStorageBlockBase;
 import net.thep2wking.oedldoedlintegration.api.item.ModItemColoredCoinBase;
 import net.thep2wking.oedldoedlintegration.api.item.ModItemColoredDustBase;
@@ -12,6 +13,9 @@ import net.thep2wking.oedldoedlintegration.api.item.ModItemColoredPlateBase;
 import net.thep2wking.oedldoedlintegration.config.IntegrationConfig;
 
 public class ModItems {
+	public static final Item URANIUM_ORE = new ModItemBlockColoredOreBase(ModBlocks.URANIUM_ORE, IntegrationConfig.PROPERTIES.COLORS.URANIUM);
+	public static final Item TITANIUM_ORE = new ModItemBlockColoredOreBase(ModBlocks.TITANIUM_ORE, IntegrationConfig.PROPERTIES.COLORS.TITANIUM);
+
 	public static final Item URANIUM_BLOCK = new ModItemBlockColoredStorageBlockBase(ModBlocks.URANIUM, IntegrationConfig.PROPERTIES.COLORS.URANIUM);
 	public static final Item TITANIUM_BLOCK = new ModItemBlockColoredStorageBlockBase(ModBlocks.TITANIUM, IntegrationConfig.PROPERTIES.COLORS.TITANIUM);
 

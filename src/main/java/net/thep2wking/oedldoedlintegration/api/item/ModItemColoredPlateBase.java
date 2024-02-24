@@ -11,8 +11,8 @@ import net.thep2wking.oedldoedlintegration.OedldoedlIntegration;
 public class ModItemColoredPlateBase extends ModItemColoredResourceBase {
 	public static final String GENERIC_NAME = "item." + OedldoedlIntegration.MODID + ".plate_colorable";
 
-	public ModItemColoredPlateBase(String modid, String name, CreativeTabs tab, int color) {
-		super(modid, name + "_plate", tab, color, ModRarities.WHITE, false, 0, 0);
+	public ModItemColoredPlateBase(String modid, String name, CreativeTabs tab, String hexColor) {
+		super(modid, name + "_plate", tab, hexColor, ModRarities.WHITE, false, 0, 0);
 	}
 
 	public String getNameWithOutType() {

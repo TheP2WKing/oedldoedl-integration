@@ -15,13 +15,13 @@ import net.thep2wking.oedldoedlcore.api.block.ModBlockBase;
 import net.thep2wking.oedldoedlcore.util.ModToolTypes;
 
 public class ModBlockColoredResourceBase extends ModBlockBase {
-	public final int color;
+	public final String hexColor;
 
-	public ModBlockColoredResourceBase(String modid, String name, CreativeTabs tab, int color, Material material,
+	public ModBlockColoredResourceBase(String modid, String name, CreativeTabs tab, String hexColor, Material material,
 			SoundType sound, MapColor mapColor, int harvestLevel, ModToolTypes toolType, float hardness,
 			float resistance, int lightLevel) {
 		super(modid, name, tab, material, sound, mapColor, harvestLevel, toolType, hardness, resistance, lightLevel);
-		this.color = color;
+		this.hexColor = hexColor;
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -29,8 +29,21 @@ public class ModBlockColoredResourceBase extends ModBlockBase {
 		Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(new IBlockColor() {
 			@Override
 			public int colorMultiplier(IBlockState state, IBlockAccess worldIn, BlockPos pos, int tintIndex) {
-				return color;
+				if (isValidHexColor(hexColor)) {
+					return hexToInt(hexColor);
+				} else {
+					return 0xffffff;
+				}
 			}
 		}, this);
+	}
+
+	public int hexToInt(String hexColor) {
+		return Integer.parseInt(hexColor.substring(1), 16);
+	}
+
+	public boolean isValidHexColor(String hexColor) {
+		String hexPattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
+		return hexColor.matches(hexPattern);
 	}
 }

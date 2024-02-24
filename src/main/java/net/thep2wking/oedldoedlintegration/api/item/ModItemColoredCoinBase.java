@@ -11,8 +11,8 @@ import net.thep2wking.oedldoedlintegration.OedldoedlIntegration;
 public class ModItemColoredCoinBase extends ModItemColoredResourceBase {
 	public static final String GENERIC_NAME = "item." + OedldoedlIntegration.MODID + ".coin_colorable";
 
-	public ModItemColoredCoinBase(String modid, String name, CreativeTabs tab, int color) {
-		super(modid, name + "_coin", tab, color, ModRarities.WHITE, false, 0, 0);
+	public ModItemColoredCoinBase(String modid, String name, CreativeTabs tab, String hexColor) {
+		super(modid, name + "_coin", tab, hexColor, ModRarities.WHITE, false, 0, 0);
 	}
 
 	public String getNameWithOutType() {

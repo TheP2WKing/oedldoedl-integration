@@ -7,8 +7,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.thep2wking.oedldoedlcore.util.ModToolTypes;
 
 public class ModBlockColoredStorageBlockBase extends ModBlockColoredResourceBase {
-	public ModBlockColoredStorageBlockBase(String modid, String name, CreativeTabs tab, int color) {
-		super(modid, name + "_block", tab, color, Material.IRON, SoundType.METAL, MapColor.WHITE_STAINED_HARDENED_CLAY,
+	public ModBlockColoredStorageBlockBase(String modid, String name, CreativeTabs tab, String hexColor) {
+		super(modid, name + "_block", tab, hexColor, Material.IRON, SoundType.METAL, MapColor.WHITE_STAINED_HARDENED_CLAY,
 				1, ModToolTypes.PICKAXE, 5.0f, 5.0f, 0);
 	}
 }

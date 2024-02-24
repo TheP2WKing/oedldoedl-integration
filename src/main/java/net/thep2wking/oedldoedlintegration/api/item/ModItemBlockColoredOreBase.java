@@ -8,22 +8,22 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.oedldoedlcore.util.ModRarities;
 import net.thep2wking.oedldoedlintegration.OedldoedlIntegration;
 
-public class ModItemBlockColoredStorageBlockBase extends ModItemBlockColoredResourceBase {
-	public static final String GENERIC_NAME = "tile." + OedldoedlIntegration.MODID + ".storage_block_colorable";
+public class ModItemBlockColoredOreBase extends ModItemBlockColoredResourceBase {
+	public static final String GENERIC_NAME = "tile." + OedldoedlIntegration.MODID + ".ore_colorable";
 
-	public ModItemBlockColoredStorageBlockBase(Block block, String hexColor) {
+	public ModItemBlockColoredOreBase(Block block, String hexColor) {
 		super(block, hexColor, ModRarities.WHITE, false, 0, 0);
 	}
 
 	public String getNameWithOutType() {
-		String raw = block.getUnlocalizedName().replace("_block", "");
+		String raw = block.getUnlocalizedName().replace("_ore", "");
 		return raw.substring((raw.lastIndexOf(".") + 1));
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public String getItemStackDisplayName(ItemStack stack) {
-		return I18n.format(GENERIC_NAME + ".name") + " " + getNameWithOutType().substring(0, 1).toUpperCase()
-				+ getNameWithOutType().substring(1);
+		return getNameWithOutType().substring(0, 1).toUpperCase() + getNameWithOutType().substring(1) + " "
+				+ I18n.format(GENERIC_NAME + ".name");
 	}
 }

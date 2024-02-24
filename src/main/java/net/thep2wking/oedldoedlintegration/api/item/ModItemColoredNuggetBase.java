@@ -11,8 +11,8 @@ import net.thep2wking.oedldoedlintegration.OedldoedlIntegration;
 public class ModItemColoredNuggetBase extends ModItemColoredResourceBase {
 	public static final String GENERIC_NAME = "item." + OedldoedlIntegration.MODID + ".nugget_colorable";
 
-	public ModItemColoredNuggetBase(String modid, String name, CreativeTabs tab, int color) {
-		super(modid, name + "_nugget", tab, color, ModRarities.WHITE, false, 0, 0);
+	public ModItemColoredNuggetBase(String modid, String name, CreativeTabs tab, String hexColor) {
+		super(modid, name + "_nugget", tab, hexColor, ModRarities.WHITE, false, 0, 0);
 	}
 
 	public String getNameWithOutType() {

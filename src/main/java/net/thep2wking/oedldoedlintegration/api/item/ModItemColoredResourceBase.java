@@ -10,12 +10,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.oedldoedlcore.api.item.ModItemBase;
 
 public class ModItemColoredResourceBase extends ModItemBase {
-	public final int color;
+	public final String hexColor;
 
-	public ModItemColoredResourceBase(String modid, String name, CreativeTabs tab, int color, EnumRarity rarity,
+	public ModItemColoredResourceBase(String modid, String name, CreativeTabs tab, String hexColor, EnumRarity rarity,
 			boolean hasEffect, int tooltipLines, int annotationLines) {
 		super(modid, name, tab, rarity, hasEffect, tooltipLines, annotationLines);
-		this.color = color;
+		this.hexColor = hexColor;
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -23,8 +23,21 @@ public class ModItemColoredResourceBase extends ModItemBase {
 		Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new IItemColor() {
 			@Override
 			public int colorMultiplier(ItemStack stack, int tintIndex) {
-				return color;
+				if (isValidHexColor(hexColor)) {
+					return hexToInt(hexColor);
+				} else {
+					return 0xffffff;
+				}
 			}
 		}, this);
+	}
+
+	public int hexToInt(String hexColor) {
+		return Integer.parseInt(hexColor.substring(1), 16);
+	}
+
+	public boolean isValidHexColor(String hexColor) {
+		String hexPattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
+		return hexColor.matches(hexPattern);
 	}
 }

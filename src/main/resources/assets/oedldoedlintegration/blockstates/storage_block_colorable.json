@@ -1,14 +1,9 @@
 {
-    "forge_marker": 1,
-    "defaults": {
-        "model": "oedldoedlintegration:storage_block_colorable",
-        "textures": {
-            "base": "oedldoedlintegration:blocks/storage_block_colorable"
+    "variants": 
+    {
+        "normal": 
+        {
+            "model": "oedldoedlintegration:storage_block_colorable"
         }
-    },
-    "variants": {
-        "normal": [
-            {}
-        ]
     }
 }

@@ -12,7 +12,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thep2wking.oedldoedlcore.util.ModLogger;
 import net.thep2wking.oedldoedlintegration.OedldoedlIntegration;
+import net.thep2wking.oedldoedlintegration.api.block.ModBlockColoredOreBase;
 import net.thep2wking.oedldoedlintegration.api.block.ModBlockColoredResourceBase;
+import net.thep2wking.oedldoedlintegration.api.block.ModBlockColoredStorageBlockBase;
+import net.thep2wking.oedldoedlintegration.api.item.ModItemBlockColoredOreBase;
 import net.thep2wking.oedldoedlintegration.api.item.ModItemBlockColoredResourceBase;
 import net.thep2wking.oedldoedlintegration.api.item.ModItemBlockColoredStorageBlockBase;
 import net.thep2wking.oedldoedlintegration.api.item.ModItemColoredCoinBase;
@@ -34,17 +37,6 @@ public class ModIntegrationRegistryHelper {
 			}
 		}
 	}
-
-	// // register item colors
-	// @SideOnly(Side.CLIENT)
-	// public static void registerItemBlockColors(String modId) {
-	// for (Item item : ForgeRegistries.ITEMS.getValuesCollection()) {
-	// if (item.getRegistryName().getResourceDomain().equals(modId)
-	// && item instanceof ModItemBlockColoredResourceBase) {
-	// ((ModItemBlockColoredResourceBase) item).registerColorRender();
-	// }
-	// }
-	// }
 
 	// register block colors
 	@SideOnly(Side.CLIENT)
@@ -96,6 +88,10 @@ public class ModIntegrationRegistryHelper {
 				ModelLoader.setCustomModelResourceLocation(item, 0,
 						new ModelResourceLocation(OedldoedlIntegration.MODID + ":storage_block_colorable", "normal"));
 			} else if (item.getRegistryName().getResourceDomain().equals(modId)
+					&& item instanceof ModItemBlockColoredOreBase) {
+				ModelLoader.setCustomModelResourceLocation(item, 0,
+						new ModelResourceLocation(OedldoedlIntegration.MODID + ":ore_colorable", "normal"));
+			} else if (item.getRegistryName().getResourceDomain().equals(modId)
 					&& !(item instanceof ModItemColoredResourceBase)
 					&& !(item instanceof ModItemBlockColoredResourceBase)) {
 				ModelLoader.setCustomModelResourceLocation(item, 0,
@@ -104,11 +100,20 @@ public class ModIntegrationRegistryHelper {
 		}
 		for (Block block : ForgeRegistries.BLOCKS.getValuesCollection()) {
 			if (block.getRegistryName().getResourceDomain().equals(modId)
-					&& block instanceof ModBlockColoredResourceBase) {
+					&& block instanceof ModBlockColoredStorageBlockBase) {
 				ModelLoader.setCustomStateMapper(block, new StateMapperBase() {
 					@Override
 					public ModelResourceLocation getModelResourceLocation(IBlockState state) {
 						return new ModelResourceLocation(OedldoedlIntegration.MODID + ":storage_block_colorable",
+								"normal");
+					}
+				});
+			} else if (block.getRegistryName().getResourceDomain().equals(modId)
+					&& block instanceof ModBlockColoredOreBase) {
+				ModelLoader.setCustomStateMapper(block, new StateMapperBase() {
+					@Override
+					public ModelResourceLocation getModelResourceLocation(IBlockState state) {
+						return new ModelResourceLocation(OedldoedlIntegration.MODID + ":ore_colorable",
 								"normal");
 					}
 				});

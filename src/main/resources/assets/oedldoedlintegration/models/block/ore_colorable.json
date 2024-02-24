@@ -1,7 +1,34 @@
 {
-    "parent": "block/cube_all",
-    "textures":  
-    {
-        "all": "oedldoedlintegration:blocks/ore_colorable"
-   	}
+    "parent": "block/block",
+    "textures": {
+        "particle": "minecraft:blocks/stone",
+        "layer0": "oedldoedlintegration:blocks/ore_not_colorable",
+        "layer1": "oedldoedlintegration:blocks/ore_colorable"
+    },
+    "elements": [
+        {
+            "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#layer0" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#layer0" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#layer0" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#layer0" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#layer0" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#layer0" }
+            }
+        },
+        {
+            "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#layer1", "tintindex": 0 },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#layer1", "tintindex": 0 },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#layer1", "tintindex": 0 },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#layer1", "tintindex": 0 },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#layer1", "tintindex": 0 },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#layer1", "tintindex": 0 }
+            }
+        }
+    ]
 }
