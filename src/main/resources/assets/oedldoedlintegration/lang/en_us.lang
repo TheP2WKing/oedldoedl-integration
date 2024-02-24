@@ -5,5 +5,14 @@ itemGroup.oedldoedlintegration.name=§dOedldoedl Integration
 item.oedldoedlcore.integration_icon.annotation3=Version: §e1.12.2-4.0.0
 
 # blocks
+tile.oedldoedlintegration.storage_block_colorable.name=Block of
+tile.oedldoedlintegration.ore_colorable.name=Ore
 
 # items
+item.oedldoedlintegration.ingot_colorable.name=Ingot
+item.oedldoedlintegration.nugget_colorable.name=Nugget
+item.oedldoedlintegration.dust_colorable.name=Dust
+item.oedldoedlintegration.pulverized_colorable.name=Pulverized
+item.oedldoedlintegration.plate_colorable.name=Plate
+item.oedldoedlintegration.gear_colorable.name=Gear
+item.oedldoedlintegration.coin_colorable.name=Coin

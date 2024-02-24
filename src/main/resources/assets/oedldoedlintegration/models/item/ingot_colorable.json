@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"textures": 
+	{
+		"layer0": "oedldoedlintegration:items/ingot_colorable"
+	}
+}

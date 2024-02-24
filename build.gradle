@@ -72,6 +72,14 @@ dependencies {
 
     // matteroverdrive
     deobfCompile("curse.maven:matteroverdrive-legacy-308192:2699215")
+
+    // thermal
+    deobfCompile("curse.maven:thermal-expansion-69163:2926431")
+    deobfCompile("curse.maven:thermal-foundation-222880:2926428")
+    deobfCompile("curse.maven:cofh-core-69162:2920433")
+    deobfCompile("curse.maven:cofh-world-271384:2920434")
+    deobfCompile("curse.maven:redstone-flux-270789:2920436")
+    deobfCompile("curse.maven:codechicken-lib-1-8-242818:2779848")
 }
 
 processResources {
